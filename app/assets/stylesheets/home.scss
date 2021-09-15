@@ -1,3 +1,30 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* Color Theme Swatches in Hex */
+$oxford-blue-h: #394159;
+$storm-h: #657c99;
+$periwinkle-h: #91B7D9;
+$cream-h: #F8F5DA;
+$mint-h: #99D3AB;
+$basil-h: #63BF9E;
+
+
+/* Color Theme Swatches in HSLA */
+$oxford-blue-h: hsla(225, 21, 28, 1);
+$storm-hsla: hsla(213, 20, 50, 1);
+$periwinkle-hsla: hsla(208, 48, 70, 1);
+$cream-hsla: hsla(54, 68, 91, 1);
+$mint-hsla: hsla(138, 39, 71, 1);
+$basil-hsla: hsla(158, 41, 56, 1);
+
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Raleway', sans-serif;
+}
+
+  
+body, p, ol, ul, td {
+    font-family: 'Glory', sans-serif;
+}

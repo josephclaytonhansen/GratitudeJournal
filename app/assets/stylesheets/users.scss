@@ -1,0 +1,218 @@
+$oxford-blue-h: #394159;
+$storm-h: #657c99;
+$periwinkle-h: #91B7D9;
+$cream-h: #F8F5DA;
+$mint-h: #99D3AB;
+$basil-h: #63BF9E;
+
+/* Color Theme Swatches in HSLA */
+$oxford-blue-h: hsla(225, 21, 28, 1);
+$storm-hsla: hsla(213, 20, 50, 1);
+$periwinkle-hsla: hsla(208, 48, 70, 1);
+$cream-hsla: hsla(54, 68, 91, 1);
+$mint-hsla: hsla(138, 39, 71, 1);
+$leaf-hsla: hsla(148, 40, 63, 1);
+$basil-hsla: hsla(158, 41, 56, 1);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+body,
+p,
+ol,
+ul,
+td {
+    font-family: 'Glory', sans-serif;
+}
+
+.card-white {
+    border: 4px solid $leaf-hsla;
+    border-radius: 20px;
+    box-shadow: 0px 10px 0px 0px $basil-hsla;
+    background-color: $mint-hsla;
+}
+
+.card-vertical {
+    min-width: 140px;
+    max-width: 600px;
+    width: 80%;
+    min-height: 300px;
+    max-height: 760px;
+}
+
+.card-def {
+    margin: auto;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinners-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinners-parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.spinning-frame {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 220px;
+    height: 220px;
+    border: solid 5px $cream-hsla;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.spinning-frame-img {
+    background-image: image-url("images/fox_icon_vecteezy.png");
+    z-index: 97;
+}
+
+.spinning-frame-a {
+    background:
+        radial-gradient($oxford-blue-h calc(65% - 1px)
+            /* fix Chromium jagged edges */
+            ,
+            transparent 10%),
+        conic-gradient(from -18deg,
+            transparent 16.6%, $cream-h 0% 33.33%, transparent 0% 50%, $oxford-blue-h 0% 66.6%, transparent 0% 83.26%,
+            $periwinkle-h 0% 100%);
+    animation: rotation 50s infinite linear;
+}
+
+.spinning-frame-b {
+    background:
+        radial-gradient($oxford-blue-h calc(65% - 1px)
+            /* fix Chromium jagged edges */
+            ,
+            transparent 10%),
+        conic-gradient(from -18deg,
+            $periwinkle-h 16.6%, transparent 0% 33.33%, $cream-hsla 0% 50%, transparent 0% 66.6%, $storm-h 0% 83.26%,
+            transparent 0% 100%);
+    animation: rotation 65s infinite linear;
+}
+
+.spinning-frame-c {
+    background:
+        radial-gradient($oxford-blue-h calc(65% - 1px)
+            /* fix Chromium jagged edges */
+            ,
+            transparent 10%),
+        conic-gradient(from -18deg,
+            $cream-h 16.6%, transparent 0% 33.33%, $periwinkle-hsla 0% 50%, transparent 0% 66.6%, $storm-hsla 0% 83.26%,
+            transparent 0% 100%);
+    animation: rotation 35s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.entry-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-content: space-between;
+    padding: 10px;
+    margin: 10px auto auto auto;
+}
+
+.white-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-family: "Glory";
+}
+
+.white-entry input::placeholder {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.white-entry input {
+    font-family: "Glory";
+    font-size: 1.3em;
+    font-weight: 600;
+    border: 4px solid $cream-h;
+    border-radius: 4px;
+    padding: 3px;
+    box-shadow: 0px 3px 0px 0px $basil-hsla;
+    caret-color: transparent;
+}
+
+.white-entry input:focus {
+    border: 4px solid white;
+    box-shadow: 0px 5px 0px 0px $basil-hsla;
+    outline: none;
+    color: $basil-hsla;
+    font-size: 1.4em;
+
+}
+
+.white-entry input:focus::placeholder {
+    color: $basil-hsla;
+    font-size: 1.4em;
+}
+
+.entry-field {
+    flex: 1;
+    min-height: 30px;
+}
+
+.buttons-row{
+    display:flex; flex-direction: row; flex-wrap: wrap;
+}
+
+.submit-button {
+    flex: 1;
+    background-color: $oxford-blue-h;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0px 3px 0px 0px $basil-hsla;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.submit-button input {
+    border: none;
+    background-color: $oxford-blue-h;
+    color: white;
+    font-size: 35px;
+    font-family: "Glory";
+}
