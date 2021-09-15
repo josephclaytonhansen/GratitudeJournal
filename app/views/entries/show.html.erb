@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @entry.text %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @entry.tags %>
+</p>
+
+<p>
+  <strong>Visible:</strong>
+  <%= @entry.visible %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entry.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
