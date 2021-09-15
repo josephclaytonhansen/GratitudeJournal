@@ -25,5 +25,9 @@
   <%= @entry.user_id %>
 </p>
 
+<% if @entry.photo.attached? %>
+<image src = "<%=(url_for(@entry.photo))%>">
+<%end%>
+
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>

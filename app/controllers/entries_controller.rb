@@ -17,6 +17,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/edit
   def edit
+    @entry.photo.attach(params[:photo])
   end
 
   # POST /entries or /entries.json
@@ -64,6 +65,6 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:title, :text, :tags, :visible, :user_id)
+      params.require(:entry).permit(:title, :text, :tags, :visible, :user_id, :photo)
     end
 end
