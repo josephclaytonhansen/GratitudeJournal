@@ -211,8 +211,16 @@ td {
 
 .submit-button input {
     border: none;
+    cursor: pointer;
     background-color: $oxford-blue-h;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     font-family: "Glory";
+    padding:2.5px;
+}
+
+.submit-button :hover{
+    font-size:34px;
+    padding:0px;
+    font-weight:700;
 }
