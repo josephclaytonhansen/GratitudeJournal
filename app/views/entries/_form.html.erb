@@ -15,7 +15,8 @@
   <div class="prompt" style="flex:2 2 auto;">
     <%= form.text_area :title, readonly:true, id: "prompt-v" %>
   </div>
-  <div class="submit-button" style="flex:1 1 auto"><a onClick="newPrompt(); return false;" style="font-size:14px; padding:2px;">New
+  <div class="submit-button" style="flex:1 1 auto"><a onClick="newPrompt(); return false;"
+      style="font-size:14px; padding:2px;">New
       Prompt</a></input></div>
 </div>
 
@@ -63,6 +64,7 @@
       "How did I grow today?"
     ]
 
+
     choice = Math.floor(Math.random() * prompts.length);
     new_prompt = prompts[choice];
 
@@ -70,6 +72,7 @@
 
   }
   promptAssign()
-  if (current_prompt.length < 1) {newPrompt();}
-
+  if (current_prompt.length < 1) {
+    newPrompt();
+  }
 </script>

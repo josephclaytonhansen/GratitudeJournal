@@ -6,6 +6,40 @@ $mint-h: #99D3AB;
 $basil-h: #63BF9E;
 $leaf-hsla: hsla(148, 40, 63, 1);
 
+
+
+@media screen and (max-width: 600px) {
+  .header-new {
+    margin: 86vh 76vw auto auto;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .header-new {
+    margin: 80vh auto auto 65vw;
+  }
+}
+
+.header-new {
+  position: relative;
+  border-radius: 99px;
+  height: 70px;
+  width: 70px;
+  background-color: rgba(240, 240, 255, 0.55)!important;
+  color: white;
+  border: 2px solid $storm-h!important;
+  content: image-url("images/add-file_by_srip_via_fonticon.png");
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.header-new:hover {
+  border: 2px solid $periwinkle-h;
+  transform: rotate(5deg);
+
+
+}
+
 .card-entry {
   flex: 1 1 auto;
   min-height: 100px;
@@ -106,9 +140,9 @@ hr {
   border-radius: 99px;
   height: 50px;
   width: 50px;
-  background-color: rgba(240, 240, 255, 0.55);
+  background-color: rgba(240, 240, 255, 0.55)!important;
   color: white;
-  border: 2px solid $storm-h;
+  border: 2px solid $storm-h!important;
   box-shadow: 0px 3px 0px 0px $basil-h;
   cursor: pointer;
   z-index: 99;
@@ -125,8 +159,8 @@ hr {
   cursor: pointer;
   z-index: 99;
   position: relative;
-  margin-left:2px;
-  margin-right:2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .button-show {
@@ -168,10 +202,19 @@ hr {
 .in-entry-button-container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction:row;
+  flex-direction: row;
   width: 100vw;
   margin-top: 80vh;
-  margin-left:20vw;
+  margin-left: 20vw;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100vw;
+  margin-top: 80vh;
+  margin-left: 20vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -210,7 +253,8 @@ hr {
   margin-bottom: 20px;
 }
 
-.prompt textarea{font-family: "Glory";
+.prompt textarea {
+  font-family: "Glory";
   font-size: 1.3em;
   font-weight: 600;
   border: 4px solid $cream-h;
@@ -218,5 +262,6 @@ hr {
   padding: 3px;
   box-shadow: 0px 3px 0px 0px $basil-h;
   caret-color: transparent;
-width:90%;
-min-height:60px;}
+  width: 90%;
+  min-height: 60px;
+}

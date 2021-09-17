@@ -1,3 +1,5 @@
+<%=link_to "New Entry", new_entry_path, class: "header-new"%>
+
 <div class="card-container">
   <div class="entries-container">
     <% @entries.order("created_at desc").each do |entry| %>
@@ -8,7 +10,7 @@
       <div class="entry-body">
         <h3><%=entry.title%></h3>
         <hr>
-        <p class = "entry-text"><%= entry.text%></p>
+        <p class="entry-text"><%= entry.text%></p>
       </div>
       <%=link_to "Show", entry, class: "entry-button button-show"%>
     </div>
@@ -25,7 +27,7 @@
       console.log(str);
       if (str.length > 140) {
         entry.innerText = str.slice(0, 140) + "...";
-      } 
+      }
     }
   }
   truncateBody();
