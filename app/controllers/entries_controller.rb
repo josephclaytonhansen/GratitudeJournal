@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/edit
   def edit
-    @entry.photo.attach(params[:photo])
+    
   end
 
   # POST /entries or /entries.json

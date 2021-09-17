@@ -1,5 +1,13 @@
-<h1>New Entry</h1>
+<body id="entry-background">
+    <div class="in-entry-button-container">
+        <%= link_to 'All Entries', entries_path, class: "in-entry-button button-entries" %>
+    </div>
+    <div class="card-container card-vertical">
+        <div class="card-white card-vertical card-def">
+            <div class="entry-container">
+                <%= render 'form', entry: @entry %>
 
-<%= render 'form', entry: @entry %>
-
-<%= link_to 'Back', entries_path %>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,46 +1,75 @@
 <%= form_with(model: entry) do |form| %>
-  <% if entry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+<% if entry.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
 
-      <ul>
-        <% entry.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tags %>
-    <%= form.text_field :tags %>
-  </div>
-
-  <div class="field">
-    <%= form.label :visible %>
-    <%= form.check_box :visible %>
-  </div>
-
-  <div class="field">
-    <%= form.text_field :user_id, id: :entry_user_id, value:current_user.id, type: :hidden, readonly: true %>
-  </div>
-
-    <div class="field">
-    <%= form.label :"Photo" %>
-    <%= form.file_field :photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <ul>
+    <% entry.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<div style="display:flex;flex-direction:row;align-content:center;align-items:center;justify-content:center;">
+  <div class="prompt" style="flex:2 2 auto;">
+    <%= form.text_area :title, readonly:true, id: "prompt-v" %>
+  </div>
+  <div class="submit-button" style="flex:1 1 auto"><a onClick="newPrompt(); return false;" style="font-size:14px; padding:2px;">New
+      Prompt</a></input></div>
+</div>
+
+
+<div class="white-entry entry-field">
+  <%= form.text_area :text %>
+</div>
+
+<div class="field">
+  <%= form.text_field :user_id, id: :entry_user_id, value:current_user.id, type: :hidden, readonly: true %>
+</div>
+
+<div class="field">
+
+  <%if entry.photo.attached?%>
+  <%= form.label :"Replace Photo (leave blank to keep old photo)" %>
+  <%= form.file_field :photo, value: url_for(entry.photo)%>
+  <%else%>
+  <%= form.label :"Photo" %>
+  <%= form.file_field :photo%>
+  <%end%>
+</div>
+<div class="buttons-row">
+  <div class="actions">
+    <div class="submit-button">
+      <%= form.submit %></div>
+  </div>
+</div>
+<% end %>
+
+<script type="text/javascript">
+  function promptAssign() {
+
+    current_prompt = document.getElementById("prompt-v").value;
+    console.log(current_prompt);
+
+  }
+
+  function newPrompt() {
+    prompts = ["What was a tender mercy I saw today?", "How was I blessed today?", "How did I serve someone today?",
+      "What was today's best moment?", "What am I looking forward to?", "What am I grateful for today?",
+      "What made me smile today?", "What made today a good day?", "What made today special?",
+      "What's something kind someone else did for me today?",
+      "What was my favorite part of today?", "What made today better than yesterday?",
+      "How did I grow today?"
+    ]
+
+    choice = Math.floor(Math.random() * prompts.length);
+    new_prompt = prompts[choice];
+
+    document.getElementById("prompt-v").value = new_prompt;
+
+  }
+  promptAssign()
+  if (current_prompt.length < 1) {newPrompt();}
+
+</script>

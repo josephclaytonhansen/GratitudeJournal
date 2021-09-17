@@ -1,6 +1,14 @@
-<h1>Editing Entry</h1>
-
-<%= render 'form', entry: @entry %>
-
-<%= link_to 'Show', @entry %> |
-<%= link_to 'Back', entries_path %>
+<body id="entry-background">
+    <div class="in-entry-button-container">
+        <%= link_to 'All Entries', entries_path, class: "in-entry-button button-entries" %>
+        <%= link_to 'Edit', edit_entry_path(@entry), class: "in-entry-button button-edit" %>
+        <%= link_to 'Destroy', @entry, method: :delete, data: { confirm: 'Do you want to delete this entry?' }, class: "in-entry-button button-delete" %>
+    </div>
+    <div class="card-container card-vertical">
+        <div class="card-white card-vertical card-def">
+            <div class="entry-container">
+                <%= render 'form', entry: @entry %>
+            </div>
+        </div>
+    </div>
+</body>
