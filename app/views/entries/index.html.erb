@@ -21,10 +21,8 @@
 <script type="text/javascript">
   function truncateBody() {
     list = document.getElementsByClassName("entry-text");
-    console.log(list);
     for (const entry of list) {
       var str = entry.innerText;
-      console.log(str);
       if (str.length > 140) {
         entry.innerText = str.slice(0, 140) + "...";
       }
