@@ -23,12 +23,14 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'entry-field', placeholder: "Confirm password" %>
       </div>
 
-      <div class = "buttons-row"><div class="submit-button">
-        <%= f.submit "Sign up" %>
+      <div class="buttons-row">
+        <div class="main-button">
+          <%= f.submit "Create account" %>
+        </div>
+        <div class="submit-button">
+          <%= link_to "Back to log in", new_session_path(resource_name) %>
+        </div>
       </div>
-      <div class="submit-button">
-      <%= button_to "Log in", new_session_path(resource_name) %>
-      </div></div>
       <% end %>
     </div>
   </div>
