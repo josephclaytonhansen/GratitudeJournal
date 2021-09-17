@@ -15,6 +15,9 @@
       <%=link_to "Show", entry, class: "entry-button button-show"%>
     </div>
     <% end %>
+    <%if @entries.length == 0%>
+    <h2 style = "color:black">No entries- click the button on the bottom left to create your first</h2>
+    <%end%>
   </div>
 </div>
 
