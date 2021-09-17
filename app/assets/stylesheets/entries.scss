@@ -7,120 +7,205 @@ $basil-h: #63BF9E;
 $leaf-hsla: hsla(148, 40, 63, 1);
 
 .card-entry {
-    flex: 1 1 auto;
-    min-height: 100px;
-    max-height: 800px;
-    max-width: 300px;
-    min-width: 260px;
-    padding: 15px;
-    overflow: hidden;
-    display:flex;
-    flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 100px;
+  max-height: 800px;
+  max-width: 300px;
+  min-width: 260px;
+  padding: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
 }
 
-.entries-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 20px;
-    width: 90vw;
-    height:90vh;
-    max-width: 450px;
-    flex-wrap:wrap;
-    overflow-y: scroll;
-    padding-top:20px;
-    padding-bottom:20px;
+.entries-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  width: 90vw;
+  height: 90vh;
+  max-width: 450px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 ::selection {
-    background: $oxford-blue-h;
-    color: $cream-h;
-  }
-  
-  ::-moz-selection {
-    background: $oxford-blue-h;
-    color: $cream-h;
-  }
-  
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: transparent $periwinkle-h;
-  }
-  
-  /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: $periwinkle-h;
-    border-radius: 20px;
-  }
-  
-  .entry-body{
-      border-radius: 15px;
-      flex-grow: 1;
-      background-color: white;
-      border: 4px solid $cream-h;
-      padding: 6px;
-      color:$oxford-blue-h;
-      box-shadow: 0px 3px 0px 0px $basil-h;
-      margin-top:16px;
-  }
-
-  .entry-body p{
-      font-size: 1.2em;
-    line-height: 1.1em;
-text-align: left;}
-
-  hr {
-    border: none;
-    border-radius:99px;
-    border-top: 2px solid $mint-h; 
-    }
-
-  .entry-heading{
-    border-radius: 15px;
-    height:40px;
-    background-color: $leaf-hsla;
-
-    padding: 6px;
-    color:white;
-    box-shadow: 0px 3px 0px 0px $basil-h;
+  background: $oxford-blue-h;
+  color: $cream-h;
 }
 
-.entry-heading h2{
-    padding:4px;
-    margin:auto;
-    text-align:center;
+::-moz-selection {
+  background: $oxford-blue-h;
+  color: $cream-h;
 }
 
-.entry-button{
-    border-radius: 99px;
-    margin-top:-40px;
-    margin-left:calc(100% - 50px);
-    height:50px;
-    width:50px;
-    background-color:rgba(240, 240, 255, 0.55);
-    color:white;
-    border: 2px solid $storm-h;
-    box-shadow: 0px 3px 0px 0px $basil-h;
-    content: image-url("images/glasses_by_dinosoftlabs_via_flaticon.png");
-    cursor: pointer;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent $periwinkle-h;
 }
 
-.entry-button:hover{
-    height:54px;
-    width:54px;
-    margin-top:-44px;
-    margin-left:calc(100% - 54px);
-    border: 2px solid $periwinkle-h;
-    box-shadow: 0px 4px 0px 0px $basil-h;
-    transform: rotate(5deg);
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
 }
 
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $periwinkle-h;
+  border-radius: 20px;
+}
+
+.entry-body {
+  border-radius: 15px;
+  flex-grow: 1;
+  background-color: white;
+  border: 4px solid $cream-h;
+  padding: 6px;
+  color: $oxford-blue-h;
+  box-shadow: 0px 3px 0px 0px $basil-h;
+  margin-top: 16px;
+}
+
+.entry-body p {
+  font-size: 1.2em;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+hr {
+  border: none;
+  border-radius: 99px;
+  border-top: 2px solid $mint-h;
+}
+
+.entry-heading {
+  border-radius: 15px;
+  height: 40px;
+  background-color: $leaf-hsla;
+
+  padding: 6px;
+  color: white;
+  box-shadow: 0px 3px 0px 0px $basil-h;
+}
+
+.entry-heading h2 {
+  padding: 4px;
+  margin: auto;
+  text-align: center;
+}
+
+.entry-button {
+  border-radius: 99px;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(240, 240, 255, 0.55);
+  color: white;
+  border: 2px solid $storm-h;
+  box-shadow: 0px 3px 0px 0px $basil-h;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.in-entry-button {
+  border-radius: 99px;
+  height: 60px;
+  width: 60px;
+  background-color: hsla(225, 21, 28, .9);
+  color: white;
+  border: 2px solid $periwinkle-h;
+  box-shadow: 0px 3px 0px 0px $oxford-blue-h;
+  cursor: pointer;
+  z-index: 99;
+  position: relative;
+  margin-left:2px;
+  margin-right:2px;
+}
+
+.button-show {
+  content: image-url("images/glasses_by_dinosoftlabs_via_flaticon.png");
+  margin-top: -40px;
+  margin-left: calc(100% - 50px);
+}
+
+.button-edit {
+  content: image-url("images/pencil_by_freepik_via_flaticon.png");
+}
+
+.button-entries {
+  content: image-url("images/bullet-list_by_pixelperfect_via_flaticon.png");
+}
+
+.button-delete {
+  content: image-url("images/delete_by_pixelmeetup_via_flaticon.png");
+}
+
+.entry-button:hover {
+  height: 54px;
+  width: 54px;
+  margin-top: -44px;
+  margin-left: calc(100% - 54px);
+  border: 2px solid $periwinkle-h;
+  box-shadow: 0px 4px 0px 0px $basil-h;
+  transform: rotate(5deg);
+}
+
+.in-entry-button:hover {
+  height: 64px;
+  width: 64px;
+  border: 2px solid $storm-h;
+  box-shadow: 0px 4px 0px 0px $oxford-blue-h;
+  transform: rotate(5deg);
+}
+
+.in-entry-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  width: 100vw;
+  margin-top: 80vh;
+  margin-left:20vw;
+}
+
+@media screen and (max-width: 600px) {
+  .in-entry-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-top: 90vh;
+    margin-left: 40vw;
+  }
+}
+
+.card-overflow {
+  border: 4px solid $periwinkle-h;
+  border-radius: 20px;
+  box-shadow: 0px 10px 0px 0px $oxford-blue-h;
+  background-color: white;
+  overflow-y: scroll !important;
+  font-size: 1.3em;
+}
+
+.card-overflow h4 {
+  margin-top: -20px;
+  color: $leaf-hsla;
+}
+
+#entry-background {
+  background-color: $storm-h;
+  overflow: hidden;
+}
+
+.entry-image {
+  border: 3px solid $periwinkle-h;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
