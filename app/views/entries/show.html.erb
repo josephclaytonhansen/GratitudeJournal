@@ -7,7 +7,7 @@
 
 <p>
   <strong>Text:</strong>
-  <%= @entry.text %>
+  <%= h(@entry.text).gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %>
 </p>
 
 <p>
